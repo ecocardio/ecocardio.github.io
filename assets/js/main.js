@@ -8,6 +8,8 @@
 
   // احتياط: إزالة شاشة الافتتاح حتى لو تأخرت الحركة
   setTimeout(() => { const intro = $('.intro'); if (intro) intro.remove(); }, 3200);
+  // احتياط: إظهار كل المحتوى بعد 5 ثوانٍ حتى لو أبطأ الجهاز الحركة (وضع توفير البطارية مثلًا)
+  setTimeout(() => document.documentElement.classList.add('shown'), 5000);
 
   // السنة الحالية في التذييل
   $$('.year').forEach((el) => { el.textContent = new Date().getFullYear(); });
